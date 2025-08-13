@@ -26,8 +26,19 @@ const openai = new OpenAI({
 });
 
 app.use("/v1/completions", limiter);
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (!token) {
+    return res.status(401).json({ error: 'No se proporcionó token de autenticación' });
+  }
+  if (token !== process.env.API_SECRET_TOKEN_KEY) {
+    return res.status(403).json({ error: 'Token de autenticación inválido' });
+  }
+  next();
+}
 // Ruta POST /testgpt/v1 que recibe un mensaje y responde con OpenAI
-app.post("/v1/completions", async (req, res) => {
+app.post("/v1/completions", authenticateToken, async (req, res) => {
   try {
     const { userMessage } = req.body;
 
