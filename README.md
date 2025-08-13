@@ -23,13 +23,23 @@ El sistema está protegido con autenticación por token, control de solicitudes 
    ```
 
 2. Instalar dependencias:
+
+   ```bash
    npm install
 
+   ```
+
 3. Crear un archivo .env en la raíz del proyecto con las siguientes variables:
+
+   ```bash
    PORT=4000
    OPENAI_API_KEY=tu_api_key_de_openai
    API_SECRET_TOKEN_KEY=tu_token_secreto_para_autenticacion
    MODEL_NAME=gpt-4.1-mini
 
+   ```
+
 4. Iniciar el servidor:
+   ```bash
    npm start
+   ```
