@@ -67,7 +67,7 @@ app.post("/v1/completions", authenticateToken, async (req, res) => {
     //ft:gpt-4.1-mini-2025-04-14:personal:gigpz1:C2hcEF3T
     //model: "gpt-4.1-mini",
     const response = await openai.chat.completions.create({
-      model: "ft:gpt-4.1-mini-2025-04-14:personal:gigpz1:C2hcEF3T",
+      model: process.env.MODEL_NAME,
       //model: "gpt-4.1-mini",
       messages: [
         {
