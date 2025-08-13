@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://gigpz.com", "http://localhost:3000"],
+    origin: ["https://gigpz.com"],
     methods: ["POST"],
   })
 );
