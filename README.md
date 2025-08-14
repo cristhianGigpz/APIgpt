@@ -17,7 +17,7 @@ El sistema está protegido con autenticación por token, control de solicitudes 
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/APIgpt.git
+   git clone https://github.com/cristhianGigpz/APIgpt.git
    cd APIgpt
 
    ```
